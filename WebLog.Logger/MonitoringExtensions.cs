@@ -42,8 +42,8 @@ namespace WebLog.Logger
             builder.UseMetrics();
             builder.AddMetric<MetricCounterMiddleware>(x =>
             {
-                x.Name = "userservice_counter_request";
-                x.Help = "Test request from UserService";
+                x.Name = "weblog_counter_request";
+                x.Help = "Test request from WebLog";
                 x.LabelNames = new[] { "path", "method", "status" };
             });
             builder.UseLogger();
