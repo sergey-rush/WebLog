@@ -62,14 +62,14 @@ namespace WebLog.Logger.Logger
         {
             var logEvent = new LogEventInfo(logLevel, null, message);
 
-            logEvent.Properties["deephead_environment"] = LoggerContext.ContextEnvironment;
-            logEvent.Properties["deephead_host"] = LoggerContext.Host.Value;
-            logEvent.Properties["deephead_operation"] = LoggerContext.Operation.Value;
-            logEvent.Properties["deephead_x_operation_id"] = LoggerContext.XOperationId.Value;
-            logEvent.Properties["deephead_service"] = LoggerContext.ServiceName;
-            logEvent.Properties["deephead_type"] = logLevel.ToString();
-            logEvent.Properties["deephead_canary"] = LoggerContext.Canary;
-            logEvent.Properties["deephead_x_pub"] = LoggerContext.XPub;
+            logEvent.Properties["weblog_environment"] = LoggerContext.ContextEnvironment;
+            logEvent.Properties["weblog_host"] = LoggerContext.Host.Value;
+            logEvent.Properties["weblog_operation"] = LoggerContext.Operation.Value;
+            logEvent.Properties["weblog_x_operation_id"] = LoggerContext.XOperationId.Value;
+            logEvent.Properties["weblog_service"] = LoggerContext.ServiceName;
+            logEvent.Properties["weblog_type"] = logLevel.ToString();
+            logEvent.Properties["weblog_canary"] = LoggerContext.Canary;
+            logEvent.Properties["weblog_x_pub"] = LoggerContext.XPub;
 
             _logger.Log(logEvent);
             AppendCounter(logEvent);
